@@ -302,6 +302,51 @@ export default function LoginPage() {
             </div>
           </div>
 
+          {/* Role selection */}
+          <div style={{ marginBottom: "16px", marginTop: "16px" }}>
+            <label
+              htmlFor="role"
+              style={{
+                display: "block",
+                fontSize: "13px",
+                fontWeight: 600,
+                color: "#16241D",
+                marginBottom: "6px",
+              }}
+            >
+              Masuk Sebagai
+            </label>
+            <select
+              id="role"
+              name="role"
+              required
+              style={{
+                width: "100%",
+                height: "44px",
+                padding: "0 14px",
+                borderRadius: "12px",
+                border: "none",
+                outline: "none",
+                fontSize: "14px",
+                background: "rgba(0, 106, 70, 0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(0, 106, 70, 0.18)",
+                boxSizing: "border-box",
+                color: "#16241D",
+                transition: "box-shadow 0.2s ease",
+                cursor: "pointer",
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.boxShadow = "inset 0 0 0 2px #006a46"
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.boxShadow = "inset 0 0 0 1px rgba(0, 106, 70, 0.18)"
+              }}
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
           {/* Submit button */}
           <button
             type="submit"
