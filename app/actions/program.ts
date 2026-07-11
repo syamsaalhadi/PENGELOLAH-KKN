@@ -32,8 +32,9 @@ export async function getPrograms() {
     .order("created_at", { ascending: false })
 
   if (error) {
-    console.error("Error fetching programs:", error)
-    return { data: null, error: error.message }
+    const errorDetails = error instanceof Error ? error.stack : JSON.stringify(error)
+    console.error("Error fetching programs:", errorDetails)
+    return { data: null, error: error.message || errorDetails }
   }
 
   return { data, error: null }
